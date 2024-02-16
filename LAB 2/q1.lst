@@ -1,0 +1,136 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET,DATA,READONLY
+    2 00000000                 EXPORT           __VECTORS
+    3 00000000         __VECTORS
+    4 00000000 40001000        DCD              0x40001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008         
+    7 00000008                 ALIGN
+    8 00000008         
+    9 00000008                 AREA             MYCODE,CODE,READONLY
+   10 00000000                 ENTRY
+   11 00000000                 EXPORT           Reset_Handler
+   12 00000000         Reset_Handler
+   13 00000000 4D08            LDR              R5,=RES
+   14 00000002 4E09            LDR              R6,=N
+   15 00000004 F04F 0001       LDR              R0,=1
+   16 00000008 F04F 0101       LDR              R1,=1
+   17 0000000C F04F 0200       LDR              R2,=0
+   18 00000010         UP
+   19 00000010 FB00 2306       MLA              R3,R0,R6,R2
+   20 00000014 461A            MOV              R2,R3
+   21 00000016 3E01            SUBS             R6,#1
+   22 00000018 D1FA            BNE              UP
+   23 0000001A 602A            STR              R2,[R5]
+   24 0000001C         STOP
+   25 0000001C E7FE            B                STOP
+   26 0000001E 00 00 00000005 
+                       N       DCD              5
+   27 00000024 00000000 
+              00000000         AREA             MYDATA,DATA,READWRITE
+   28 00000000 00000000 
+                       RES     DCD              0x0
+   29 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\q1.d -
+o.\q1.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\A
+RM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=.\q1.lst Q1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file Q1.s
+   Uses
+      None
+Comment: RESET unused
+__VECTORS 00000000
+
+Symbol: __VECTORS
+   Definitions
+      At line 3 in file Q1.s
+   Uses
+      At line 2 in file Q1.s
+Comment: __VECTORS used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MYCODE 00000000
+
+Symbol: MYCODE
+   Definitions
+      At line 9 in file Q1.s
+   Uses
+      None
+Comment: MYCODE unused
+N 00000020
+
+Symbol: N
+   Definitions
+      At line 26 in file Q1.s
+   Uses
+      At line 14 in file Q1.s
+Comment: N used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 12 in file Q1.s
+   Uses
+      At line 5 in file Q1.s
+      At line 11 in file Q1.s
+
+STOP 0000001C
+
+Symbol: STOP
+   Definitions
+      At line 24 in file Q1.s
+   Uses
+      At line 25 in file Q1.s
+Comment: STOP used once
+UP 00000010
+
+Symbol: UP
+   Definitions
+      At line 18 in file Q1.s
+   Uses
+      At line 22 in file Q1.s
+Comment: UP used once
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MYDATA 00000000
+
+Symbol: MYDATA
+   Definitions
+      At line 27 in file Q1.s
+   Uses
+      None
+Comment: MYDATA unused
+RES 00000000
+
+Symbol: RES
+   Definitions
+      At line 28 in file Q1.s
+   Uses
+      At line 13 in file Q1.s
+Comment: RES used once
+2 symbols
+342 symbols in table

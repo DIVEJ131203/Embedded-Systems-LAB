@@ -1,0 +1,2 @@
+Dependencies for Project 'LAB 2', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Q1.s)(0x65CF42C4)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\NXP\LPC17xx--list .\q1.lst --xref -o .\q1.o --depend .\q1.d)
